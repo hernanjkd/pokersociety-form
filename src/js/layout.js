@@ -19,7 +19,7 @@ export const Layout = () => {
 					<Switch>
 						<Route exact path="/" component={SignUp} />
 						<Route exact path="/signup" component={SignUp} />
-						<Route render={() => <h1>Not found!</h1>} />
+						<Route render={() => <h1>HATRED</h1>} />
 					</Switch>
 				</ScrollToTop>
 			</BrowserRouter>
