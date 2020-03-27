@@ -43,6 +43,10 @@ export const SignUp = () => {
 						<input className="form-control" style={{ width: "25px" }} type="checkbox" />
 						Cash App
 					</div>
+					<div className="d-flex justify-content-start align-items-center">
+						<input className="form-control" style={{ width: "25px" }} type="checkbox" />
+						Bitcoin
+					</div>
 				</div>
 				<div className="text-center pt-3">
 					<img style={{ height: "40px", width: "180px" }} src={PokerSuits} />
