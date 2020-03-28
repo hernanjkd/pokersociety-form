@@ -3,7 +3,7 @@ import PokerSuits from "../../img/poker-suits.png";
 
 export const SignUp = () => {
 	return (
-		<div className="p-4 mt-5 bg-light border-dark mx-auto" style={{ borderRadius: "25px", width: "600px" }}>
+		<div className="p-4 my-5 bg-light border-dark mx-auto" style={{ borderRadius: "25px", width: "550px" }}>
 			<div className="mt-5 mx-auto" style={{ width: "400px" }}>
 				<div className="my-3">
 					<i className="ml-2">First Name</i>
@@ -27,28 +27,39 @@ export const SignUp = () => {
 				</div>
 				<div className="my-3">
 					<i className="ml-2">Preferred Method of Payment</i>
-					<div className="d-flex justify-content-start align-items-center">
-						<input className="form-control" style={{ width: "25px" }} type="checkbox" />
-						Paypal
-					</div>
-					<div className="d-flex justify-content-start align-items-center">
-						<input className="form-control" style={{ width: "25px" }} type="checkbox" />
-						Zelle
-					</div>
-					<div className="d-flex justify-content-start align-items-center">
-						<input className="form-control" style={{ width: "25px" }} type="checkbox" />
-						Venmo
-					</div>
-					<div className="d-flex justify-content-start align-items-center">
-						<input className="form-control" style={{ width: "25px" }} type="checkbox" />
-						Cash App
-					</div>
-					<div className="d-flex justify-content-start align-items-center">
-						<input className="form-control" style={{ width: "25px" }} type="checkbox" />
-						Bitcoin
+					<div className="d-flex justify-content-start">
+						<div className="ml-3">
+							<div className="d-flex justify-content-start align-items-center">
+								<input className="form-control" style={{ width: "25px" }} type="checkbox" />
+								Paypal
+							</div>
+							<div className="d-flex justify-content-start align-items-center">
+								<input className="form-control" style={{ width: "25px" }} type="checkbox" />
+								Zelle
+							</div>
+							<div className="d-flex justify-content-start align-items-center">
+								<input className="form-control" style={{ width: "25px" }} type="checkbox" />
+								Venmo
+							</div>
+						</div>
+						<div className="ml-5">
+							<div className="d-flex justify-content-start align-items-center">
+								<input className="form-control" style={{ width: "25px" }} type="checkbox" />
+								Cash App
+							</div>
+							<div className="d-flex justify-content-start align-items-center">
+								<input className="form-control" style={{ width: "25px" }} type="checkbox" />
+								Bitcoin
+							</div>
+						</div>
 					</div>
 				</div>
-				<div className="text-center pt-3">
+				<div
+					className="mb-3 mt-5 bg-info text-light text-center rounded py-1 border border-dark"
+					style={{ cursor: "pointer" }}>
+					Submit
+				</div>
+				<div className="text-center">
 					<img style={{ height: "40px", width: "180px" }} src={PokerSuits} />
 				</div>
 			</div>

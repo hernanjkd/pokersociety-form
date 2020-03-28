@@ -14,7 +14,7 @@ export const Layout = () => {
 
 	return (
 		<div className="d-flex flex-column h-100">
-			<BrowserRouter>
+			<BrowserRouter basename={basename}>
 				<ScrollToTop>
 					<Switch>
 						<Route exact path="/" component={SignUp} />
