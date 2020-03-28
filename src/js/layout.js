@@ -18,7 +18,8 @@ export const Layout = () => {
 				<ScrollToTop>
 					<Switch>
 						<Route exact path="/" component={SignUp} />
-						<Route exact path="/signup" component={SignUp} />
+						<Route path="/index.html" component={SignUp} />
+						<Route path="/signup" component={SignUp} />
 						<Route render={() => <h1>HATRED</h1>} />
 					</Switch>
 				</ScrollToTop>
