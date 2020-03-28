@@ -3,8 +3,8 @@ import PokerSuits from "../../img/poker-suits.png";
 
 export const SignUp = () => {
 	return (
-		<div className="p-4 my-5 bg-light border-dark mx-auto" style={{ borderRadius: "25px", width: "550px" }}>
-			<div className="mt-5 mx-auto" style={{ width: "400px" }}>
+		<div className="p-4 my-5 bg-light border-dark mx-auto main-div" style={{ borderRadius: "25px" }}>
+			<div className="mt-5 mx-auto input-length">
 				<div className="my-3">
 					<i className="ml-2">First Name</i>
 					<input className="form-control" />
