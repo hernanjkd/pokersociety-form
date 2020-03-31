@@ -16,7 +16,7 @@ export const PaymentSignUp = () => {
 	return (
 		<div className="p-4 my-5 bg-light border-dark mx-auto main-div" style={{ borderRadius: "25px" }}>
 			{dataProcessed ? (
-				<div>Your information has been saved!</div>
+				<h3 className="text-success text-center mt-2">Your information has been processed!</h3>
 			) : (
 				<div className="mt-5 mx-auto input-length">
 					<div className="my-3">
@@ -135,40 +135,36 @@ export const PaymentSignUp = () => {
 						className="mb-3 bg-info text-light text-center rounded py-1 border border-dark"
 						style={{ cursor: "pointer" }}
 						onClick={() => {
-							let first = firstName.trim();
-							let last = lastName.trim();
-							let user = username.trim();
-							let em = email.trim();
+							const first = firstName.trim();
+							const last = lastName.trim();
+							const user = username.trim();
+							const em = email.trim();
 
+							const regex = /^[a-zA-Z]+[\w\.]*@\w+\.[a-zA-Z]{2,5}$/g;
 							let checklst = [first, last, user, em];
 							let errlst = [];
-							for (let str of checklst) {
-								errlst.push(str === "");
-							}
-							if (!em.includes("@") || !em.includes(".")) {
-								errlst[3] = true;
-							}
-							errlst.push(types.length === 0);
-							console.log(errlst);
+
+							checklst.forEach(e => errlst.push(e === "")); // check nothing empty
+							!em.match(regex) && (errlst[3] = true); // check email
+							errlst.push(types.length === 0); // check types
+
 							setErrors(errlst);
 
-							if (false) {
-								fetch("https://pokersocietyonline.herokuapp.com/payment/data", {
+							if (!errlst.includes(true)) {
+								fetch("https://pokersocietyonline.herokuapp.com/payment/methods", {
 									method: "POST",
 									headers: { "Content-Type": "application/json" },
 									body: JSON.stringify({
-										first_name: firstName,
-										last_name: lastName,
-										username: username,
-										email: email,
+										first_name: first,
+										last_name: last,
+										username: user,
+										email: em,
 										referral_id: referralID,
 										payment_types: types
 									})
 								})
 									.then(resp => resp.json())
-									.then(processed => {
-										if (processed) setDataProcessed(true);
-									});
+									.then(processed => processed && setDataProcessed(true));
 							}
 						}}>
 						Submit
