@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import ScrollToTop from "./component/scrollToTop";
 
 import { Home } from "./views/home";
-import { SignUp } from "./views/signup";
+import { PaymentSignUp } from "./views/payment-signup";
 import injectContext from "./store/appContext";
 
 //create your first component
@@ -17,9 +17,9 @@ export const Layout = () => {
 			<BrowserRouter basename={basename}>
 				<ScrollToTop>
 					<Switch>
-						<Route exact path="/" component={SignUp} />
-						<Route path="/index.html" component={SignUp} />
-						<Route path="/signup" component={SignUp} />
+						<Route exact path="/" component={PaymentSignUp} />
+						<Route path="/index.html" component={PaymentSignUp} />
+						<Route path="/signup" component={PaymentSignUp} />
 						<Route render={() => <h1>HATRED</h1>} />
 					</Switch>
 				</ScrollToTop>
