@@ -158,8 +158,7 @@ export const PaymentSignUp = () => {
 							setErrors(errlst);
 
 							if (!errlst.includes(true)) {
-								//pokersocietyonline.herokuapp.com
-								fetch("http://localhost:3000/payment/methods", {
+								fetch("https://pokersocietyonline.herokuapp.com/payment/methods", {
 									method: "POST",
 									headers: { "Content-Type": "application/json" },
 									body: JSON.stringify({
